@@ -188,6 +188,26 @@ a:hover { text-decoration: underline; }
   color: var(--ink-soft);
 }
 
+/* ---------- Survey teaser ---------- */
+.survey-teaser {
+  display: block;
+  max-width: 720px;
+  margin: 40px 0 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.survey-teaser:hover { box-shadow: 0 10px 26px -14px rgba(0,0,0,0.35); border-color: var(--ub-red); text-decoration: none; }
+.survey-teaser img { display: block; width: 100%; height: auto; border-bottom: 1px solid var(--line); }
+.survey-teaser-cta {
+  display: block;
+  padding: 16px 22px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--ub-red);
+}
+.survey-teaser:hover .survey-teaser-cta { color: var(--ub-red-dark); }
+
 /* ---------- Focus cards ---------- */
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
 .card {
