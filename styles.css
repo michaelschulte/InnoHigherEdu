@@ -230,6 +230,7 @@ a:hover { text-decoration: underline; }
   padding-top: 22px;
   border-top: 3px solid var(--ub-red);
 }
+.model-grid + .model-grid { margin-top: 34px; }
 .unit {
   background: #fff;
   border: 1px solid var(--line);
