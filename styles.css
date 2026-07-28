@@ -188,6 +188,25 @@ a:hover { text-decoration: underline; }
   color: var(--ink-soft);
 }
 
+/* ---------- Working paper link ---------- */
+.paper-link {
+  margin: 40px 0 0;
+  max-width: 64ch;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--ub-red);
+  padding: 24px 28px;
+}
+.paper-link-label {
+  margin: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ub-red);
+  font-weight: 700;
+}
+.paper-link-text { margin: 10px 0 20px; color: var(--ink-soft); }
+
 /* ---------- Survey teaser ---------- */
 .survey-teaser {
   display: block;
