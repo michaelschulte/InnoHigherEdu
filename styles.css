@@ -169,7 +169,6 @@ a:hover { text-decoration: underline; }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 36px; }
 .about-lead { margin: 0; font-size: 1.08rem; color: var(--ink-soft); }
 .about-lead strong { color: var(--ink); }
-.about-note { margin-top: 28px; max-width: 64ch; }
 
 /* ---------- Figure ---------- */
 .figure { margin: 44px 0 0; }
