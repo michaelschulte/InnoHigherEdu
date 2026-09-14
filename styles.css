@@ -180,6 +180,11 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--line);
   padding: clamp(12px, 2.4vw, 28px);
 }
+/* Wide timeline figures scroll horizontally on small screens instead of shrinking to illegibility */
+.figure-scroll { overflow-x: auto; }
+@media (max-width: 720px) {
+  .figure--wide img { min-width: 680px; }
+}
 .figure-caption {
   margin: 14px 0 0;
   max-width: 80ch;
