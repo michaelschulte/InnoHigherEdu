@@ -211,6 +211,37 @@ a:hover { text-decoration: underline; }
 }
 .paper-link-text { margin: 10px 0 20px; color: var(--ink-soft); }
 
+.output-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin: 40px 0 0; }
+.output-grid .paper-link { margin: 0; max-width: none; display: flex; flex-direction: column; align-items: flex-start; }
+.output-grid .paper-link-text { flex: 1; }
+
+/* ---------- Preparatory-year timeline (as in the presentation) ---------- */
+.tl {
+  list-style: none; margin: 40px 0 0; padding: 0 18px 0 0;
+  display: grid; grid-template-columns: repeat(10, 1fr);
+  position: relative; line-height: 1.25;
+}
+.tl::before {                       /* the line */
+  content: ""; position: absolute; left: 0; right: 10px; top: 50%;
+  height: 4px; margin-top: -2px; background: var(--line);
+}
+.tl::after {                        /* arrow head */
+  content: ""; position: absolute; right: 0; top: 50%; margin-top: -8px;
+  border-left: 14px solid var(--line); border-top: 8px solid transparent; border-bottom: 8px solid transparent;
+}
+.tl li { display: grid; grid-template-rows: 4.2em 28px 4.2em; justify-items: center; text-align: center; margin: 0; }
+.tl .dot {
+  grid-row: 2; align-self: center; position: relative; z-index: 1;
+  width: 14px; height: 14px; border-radius: 50%; background: var(--muted); box-shadow: 0 0 0 4px #fff;
+}
+.tl .lbl { width: 170%; font-size: 0.9rem; line-height: 1.25; color: var(--muted); }
+.tl li.up .lbl   { grid-row: 1; align-self: end;   padding-bottom: 6px; }
+.tl li.down .lbl { grid-row: 3; align-self: start; padding-top: 6px; }
+.tl li.out .dot  { background: var(--ub-red); width: 20px; height: 20px; }
+.tl li.out .lbl  { color: var(--ub-red); font-weight: 700; font-size: 1rem; }
+.tl li:first-child .lbl { justify-self: start; text-align: left; width: 160%; }
+.tl li:last-child .lbl  { justify-self: end; text-align: right; width: 160%; }
+
 /* ---------- Survey teaser ---------- */
 .survey-teaser {
   display: block;
@@ -371,6 +402,14 @@ a:hover { text-decoration: underline; }
   .nav-links { display: none; }
   .about-grid { grid-template-columns: 1fr; gap: 22px; }
   .cards { grid-template-columns: 1fr; }
+  .output-grid { grid-template-columns: 1fr; }
+  .tl { grid-template-columns: 1fr; padding: 0 0 0 4px; }
+  .tl::before { left: 13px; right: auto; top: 0; bottom: 0; width: 4px; height: auto; margin: 0; }
+  .tl::after { display: none; }
+  .tl li { grid-template-rows: none; grid-template-columns: 22px 1fr; gap: 16px; align-items: center; justify-items: start; text-align: left; padding: 8px 0; }
+  .tl .dot { grid-row: 1; grid-column: 1; justify-self: center; }
+  .tl li.up .lbl, .tl li.down .lbl, .tl li:first-child .lbl, .tl li:last-child .lbl {
+    grid-row: 1; grid-column: 2; width: auto; padding: 0; justify-self: start; text-align: left; }
   .model-grid { grid-template-columns: repeat(2, 1fr); }
   .timeline { grid-template-columns: 1fr 1fr; gap: 28px 0; }
   .timeline::before { display: none; }
